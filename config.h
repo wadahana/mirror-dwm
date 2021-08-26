@@ -70,13 +70,22 @@ static const char *volupcmd[] = { "/home/eric/.local/share/dwm/vol-up.sh", NULL 
 static const char *voldowncmd[] = { "/home/eric/.local/share/dwm/vol-down.sh", NULL };
 static const char *volmutecmd[] = {"/home/eric/.local/share/dwm/vol-mute.sh", NULL};
 
+static const char *firefox_cmd[] = {"/usr/bin/firefox", NULL};
+static const char *typora_cmd[] = {"/home/eric/Application/Typora/Typora", NULL};
+static const char *studio_cmd[] = {"/home/eric/Application/android-studio/bin/studio.sh", NULL};
+
 static Key keys[] = {
-	/* modifier                     key        function        argument */
+    { 0,      XF86XK_AudioLowerVolume,         spawn,          {.v = voldowncmd} },
+    { 0,      XF86XK_AudioRaiseVolume,         spawn,          {.v = volupcmd} },
+    { 0,      XF86XK_AudioMute,                spawn,          {.v = volmutecmd} },
+	
+    /* modifier                     key        function        argument */
+    { MODKEY|ControlMask,           XK_f,      spawn,          {.v = firefox_cmd} },
+    { MODKEY|ControlMask,           XK_t,      spawn,          {.v = typora_cmd} },
+    { MODKEY|ControlMask,           XK_s,      spawn,          {.v = studio_cmd} },
+
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-    { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd} },
-    { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd} },
-    { 0,                            XF86XK_AudioMute,        spawn, {.v = volmutecmd} },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
     { MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },     
