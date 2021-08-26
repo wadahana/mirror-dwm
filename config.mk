@@ -4,11 +4,11 @@ VERSION = 6.2
 # Customize below to fit your system
 
 # paths
-PREFIX = /opt/suckless
+PREFIX = /opt/X11
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/include/X11
-X11LIB = /usr/lib/X11
+X11INC = /usr/include
+X11LIB = /usr/lib
 
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
